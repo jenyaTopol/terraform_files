@@ -1,6 +1,7 @@
 #my terraform
 #build web server
 #buil by jenyatopol
+#simple hello-world
 provider "aws" {
     
     region = "us-east-1"
@@ -14,7 +15,11 @@ resource "aws_instance" "my_web_server_ubu" {
     vpc_security_group_ids = [aws_security_group.my_security_group.id]
     user_data = <<EOF
 #!/bin/bash
-sudo apt install docker.io
+yum -y update
+yum -y install httpd
+echo "<html><body bdcolor=black><canter><h1><p><font color=red>Hello-World from server1</h1></center></body></html>" > /ver/www/html/index.html
+sudo service httpd start
+chkconfig httpd on
 EOF
 }
 resource "aws_security_group" "my_security_group" {
