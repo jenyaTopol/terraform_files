@@ -15,7 +15,7 @@ resource "aws_instance" "my_web_server_ubu" {
     vpc_security_group_ids = [aws_security_group.my_security_group.id]
     user_data = <<EOF
 #!/bin/bash
-yum -y update
+sudo -y update
 EOF
 }
 resource "aws_security_group" "my_security_group" {
