@@ -9,8 +9,8 @@ provider "aws" {
 }
 resource "aws_instance" "my_web_server_ubu" {
     count                  = 0
-    ami                    = "ami-09e67e426f25ce0d7"             #ubuntu server          
-    instance_type          = "t3.micro"
+    ami                    = "ami-01cc34ab2709337aa"             #amazon-linux server          
+    instance_type          = "t2.micro"
     key_name               =  "terraform_key_pait"
     vpc_security_group_ids = [aws_security_group.my_security_group.id]
     user_data = <<EOF
