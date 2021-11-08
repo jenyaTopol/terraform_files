@@ -17,7 +17,7 @@ resource "aws_instance" "my_web_server_ubu" {
 #!/bin/bash
 yum -y update
 yum -y install httpd
-echo "<html><body bdcolor=black><canter><h1><p><font color=red>Hello-World from server1</h1></center></body></html>" > /ver/www/html/index.html
+echo "<html><body bdcolor=black><center><h1><p><font color=red>Hello-World from server1</h1></center></body></html>" > /var/www/html/index.html
 sudo service httpd start
 chkconfig httpd on
 EOF
