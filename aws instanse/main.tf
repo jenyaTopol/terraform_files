@@ -8,7 +8,7 @@ provider "aws" {
   
 }
 resource "aws_instance" "my_web_server_ubu" {
-    count                  = 0
+    count                  = 0 #how meny istances(servers)
     ami                    = "ami-01cc34ab2709337aa"             #amazon-linux server          
     instance_type          = "t2.micro"
     key_name               =  "terraform_key_pait"
