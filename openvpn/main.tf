@@ -18,6 +18,7 @@ resource "aws_security_group" "openvpn_sg" {
   name        = "openvpn-sg"
   description = "Security group for OpenVPN server"
   vpc_id      = aws_vpc.my_vpc.id
+}
 
   # Add rules for OpenVPN server
 
